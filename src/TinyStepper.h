@@ -64,7 +64,7 @@ public:
   //!   7     1001  A  D
   //!
   //! @param phase The phase to transition to for the stepper motor (default=0)
-  void SetPhase(int8_t phase = 0);
+  void SetPhase(int8_t p = 0);
 
 protected:
 

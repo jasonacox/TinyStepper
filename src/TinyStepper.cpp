@@ -32,8 +32,8 @@ const uint8_t phase_map[] = {0x01, 0x03, 0x02, 0x06, 0x04, 0x0c, 0x08, 0x09};
 
 TinyStepper::TinyStepper(uint16_t halfsteps, uint8_t IN1, uint8_t IN2, uint8_t IN3, uint8_t IN4)
 {
-	// Copy the pin numbers
-
+  
+  // Copy the pin numbers
   m_pinIN1 = IN1;
   m_pinIN2 = IN2;
   m_pinIN3 = IN3;
@@ -41,10 +41,9 @@ TinyStepper::TinyStepper(uint16_t halfsteps, uint8_t IN1, uint8_t IN2, uint8_t I
   
   steps = halfsteps;
   step_angle = (float)(360.0/steps);
-
   phase = 0;
 
-	// Set the pins as output
+  // Set the pins as output
   pinMode(m_pinIN1, OUTPUT);//set the IN1 pin as OUTPUT
   pinMode(m_pinIN2, OUTPUT);//set the IN2 pin as OUTPUT
   pinMode(m_pinIN3, OUTPUT);//set the IN3 pin as OUTPUT
@@ -110,7 +109,10 @@ void TinyStepper::Enable() {
 }
 
 // Activate stepper motor to transition to state defined by phase map
-void TinyStepper::SetPhase(int8_t phase) {
+void TinyStepper::SetPhase(int8_t p) {
+  phase = p;
+  if (phase < 0) phase = 7;
+  if (phase > 7) phase = 0;
   digitalWrite(m_pinIN1, ((phase_map[phase] & 0x01) == 0x01 ? true : false));
   digitalWrite(m_pinIN2, ((phase_map[phase] & 0x02) == 0x02 ? true : false));
   digitalWrite(m_pinIN3, ((phase_map[phase] & 0x04) == 0x04 ? true : false));
