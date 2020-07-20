@@ -85,5 +85,5 @@ void loop() {
 }
 ```
 
-Refer to [TinyStepper.h](TinyStepper.h) for information on available functions. See also [Examples](examples) for more demonstration.
+Refer to [TinyStepper.h](src/TinyStepper.h) for information on available functions. See also [Examples](examples) for more demonstration.
 
