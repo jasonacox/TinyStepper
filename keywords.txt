@@ -1,0 +1,16 @@
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+TinyStepper	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+Move	KEYWORD2
+AccelMove	KEYWORD2
+Disable	KEYWORD2
+Enable	KEYWORD2
+SetPhase	KEYWORD2
+
