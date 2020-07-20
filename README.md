@@ -52,9 +52,10 @@ The library provides a single class named TinyStepper with the following functio
 #define IN2 9
 #define IN3 10
 #define IN4 11
+#define HALFSTEPS 4096  // Number of half-steps for a full rotation
 
 // Init the TinyStepper Class
-TinyStepper stepper(4096, IN1, IN2, IN3, IN4);
+TinyStepper stepper(HALFSTEPS, IN1, IN2, IN3, IN4);
 
 void setup()
 {
