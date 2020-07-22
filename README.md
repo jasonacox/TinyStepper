@@ -1,5 +1,7 @@
 # Tiny Stepper #
 
+[![Build Status](https://travis-ci.org/jasonacox/TinyStepper.svg?branch=master)](https://travis-ci.org/jasonacox/TinyStepper)
+
 Arduino library to drive stepper motors. Small and easy to use.
 
 ## Description ##
