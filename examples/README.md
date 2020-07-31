@@ -6,13 +6,13 @@ Arduino sketch examples:
 
 ## TinyStepper-Test ##
 
-![28BYJ-48](Stepper28BYJ-48.png | width=100)
+![28BYJ-48](Stepper28BYJ-48.png)
 
 Simple test to drive a 4-phase stepper motor using simple Move() and AccelMove() functions. 
 
 ## Laser Gimbal ##
 
-![LaserGimbal](LaserGimbal.png | width=100)
+![LaserGimbal](LaserGimbal.png)
 
 Laser Gimbal with 2 Stepper Motors based on Thingiverse project: <https://www.thingiverse.com/thing:794786>
 
@@ -28,7 +28,7 @@ Test cycles each stepper then draws a circle with the laser pointer.  Switches a
 
 ## Robotic Arm ##
 
-![RoboticArm](RoboticArm.png | width=100)
+![RoboticArm](RoboticArm.png)
 
 Robotic Arm with 3 Stepper Motors based on Thingiverse project: <https://www.thingiverse.com/thing:2838859>
 
