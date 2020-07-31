@@ -51,10 +51,10 @@ TinyStepper::TinyStepper(uint16_t halfsteps, uint8_t IN1, uint8_t IN2, uint8_t I
 }
 
 // Move stepper 'angle' degrees  
-void TinyStepper::Move(int16_t angle, uint8_t timedelay ) {
+void TinyStepper::Move(float angle, uint8_t timedelay ) {
   int halfsteps = abs((int)(angle / step_angle));
   int inc = 1;
-  if (angle < 0) {
+  if (angle < 0.0) {
     inc = -1;
   }
   for (int j = 0; j < halfsteps; j++) {
@@ -67,7 +67,7 @@ void TinyStepper::Move(int16_t angle, uint8_t timedelay ) {
 }
 
 // Move stepper 'angle' degrees and acceleration and decelleration 
-void TinyStepper::AccelMove(int16_t angle, uint8_t timedelaymin, uint8_t timedelaymax ) {
+void TinyStepper::AccelMove(float angle, uint8_t timedelaymin, uint8_t timedelaymax ) {
   int halfsteps = abs((int)(angle / step_angle));
   int d;
   int inc = 1;

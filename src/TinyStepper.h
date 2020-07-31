@@ -21,11 +21,11 @@ public:
   //! @param IN4 - The number of the digital pin connected to the IN4 of the ULN2003
   TinyStepper(uint16_t halfsteps, uint8_t IN1, uint8_t IN2, uint8_t IN3, uint8_t IN4);
 
-  //! Move the stepper motor forward or backward specified in degrees.
+  //! Move the stepper motor forward or backward specified in degrees (float).
   //!
   //! @param angle - Positive or negative number of degrees to move
   //! @param timedelay - Time in milliseconds to wait for each step (default=1)
-  void Move(int16_t angle, uint8_t timedelay = 1 );
+  void Move(float angle, uint8_t timedelay = 1 );
 
   //! Move the stepper motor forward or backward specified in degrees but do so by accelerating
   //! decelerate the motion to create a smoother transition.
@@ -36,7 +36,7 @@ public:
   //! @param angle - Positive or negative number of degrees to move
   //! @param timedelaymin - Time in milliseconds to wait for each step (default=1) at max speed
   //! @param timedelaymax - Time in milliseconds to wait for each step (default=10) at min speed
-  void AccelMove(int16_t angle, uint8_t timedelaymin = 1, uint8_t timedelaymax = 10);
+  void AccelMove(float angle, uint8_t timedelaymin = 1, uint8_t timedelaymax = 10);
 
   //! Disable stepper motor - remove power and allow free spin
   //!
