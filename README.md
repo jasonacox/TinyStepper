@@ -12,6 +12,8 @@ Simple library to drive a 4-phase stepper motor using simple Move(), AccelMove()
 
 A Stepper Motor is typically driven by a ULN2003A which provides an array of seven NPN Darlington transistors capable of 500 mA, 50 V output, great for driving inductive loads like a motor.
 
+![28BYJ-48](examples/Stepper28BYJ-48.png)
+
 The stepper motor has 4 different position coils, ABCD.  In half step mode, you energize the adjacent coil before disengaging the previous coil.  The transition steps would be these 8 patterns: A, AB, B, BC, C, CD, D, DA:
 
 ```text
