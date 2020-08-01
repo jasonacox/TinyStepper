@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+
+# Local
+.DS_Store
+.gitignore

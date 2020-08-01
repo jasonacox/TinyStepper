@@ -29,7 +29,7 @@
 #define UP3 30
 #define DOWN3 31
 
-// Initalize the TinyStepper Class
+// Initialize the TinyStepper Class
 // Arduino Pin Outputs to to the ULN2003 for the 28BYJ-48 Stepper Motors
 
 //                             IN1   IN2   IN3   IN4

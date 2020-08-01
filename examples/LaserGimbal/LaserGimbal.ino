@@ -30,7 +30,7 @@
 
 #define FACTOR 3  // Size of circle
 
-// Initalize the TinyStepper Class
+// Initialize the TinyStepper Class
 // Arduino Pin Outputs to to the ULN2003 for the 28BYJ-48 Stepper Motors
 
 //                             IN1   IN2   IN3   IN4
@@ -85,11 +85,11 @@ void loop() {
   Serial.print(" t=");
   Serial.println(t);
 
-  // Draw circle
+  // Draw circle with laser pointer
   stepper1.Move(dx);
   stepper2.Move(dy);
 
-  // All user to adjust
+  // Allow user to adjust pointer location
 
   if (digitalRead(UP1) == LOW) {
     stepper1.Move(1);
