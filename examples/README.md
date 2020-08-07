@@ -8,7 +8,11 @@ Arduino sketch examples:
 
 ![28BYJ-48](Stepper28BYJ-48.png)
 
-Simple test to drive a 4-phase stepper motor using simple Move() and AccelMove() functions. 
+Simple test to drive a 4-phase stepper motor using simple Move() and AccelMove() functions.
+
+## ATtiny85 Test ##
+
+Simple test to drive a single 4-phase stepper motor using the small but mighty 8-pin ATtiny85 microprocessor.
 
 ## Laser Gimbal ##
 
