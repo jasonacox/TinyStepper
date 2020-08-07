@@ -7,7 +7,7 @@ Arduino library to drive stepper motors. Small and easy to use.
 
 ## Description ##
 
-Simple library to drive a 4-phase stepper motor using simple Move(), AccelMove() and Disable() functions. Works well with 28BYJ-48 and UNL2003 module.
+Simple library to drive a 4-phase stepper motor using simple Move(), AccelMove() and Disable() functions. Works well with 28BYJ-48 stepper motor and UNL2003 module. Focus is on controlling steppers with basic Move(x) commands where x is positive or negative value (in degrees). Uses half-step for more torque and smoother motion.
 
 ## Hardware ##
 
