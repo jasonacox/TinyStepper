@@ -1,5 +1,6 @@
 # Tiny Stepper #
 
+[![arduino-library-badge](https://www.ardu-badge.com/badge/TinyStepper.svg?)](https://www.ardu-badge.com/TinyStepper)
 [![Build Status](https://travis-ci.org/jasonacox/TinyStepper.svg?branch=master)](https://travis-ci.org/jasonacox/TinyStepper)
 
 Arduino library to drive stepper motors. Small and easy to use.
@@ -34,7 +35,9 @@ Power Note: You should not drive the stepper motor power with the Arduino.  The 
 
 ## Installation ##
 
-You can install this manually by cloning this repo into your Arduino library folder (e.g. `~/Documents/Arduino/libraries`).  
+This library is available via the Arduino IDE.  Install this library via `Tools`, `Manage Libraries`, search for "TinyStepper" and click `Install`.
+
+You can also install the latest version manually by cloning this repo into your Arduino library folder (e.g. `~/Documents/Arduino/libraries`).  
 
 ## Usage ##
 
