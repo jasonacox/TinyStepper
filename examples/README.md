@@ -18,7 +18,7 @@ Simple test to drive a single 4-phase stepper motor using the small but mighty 8
 
 ![LaserGimbal](LaserGimbal.png)
 
-Laser Gimbal with 2 Stepper Motors based on Thingiverse project: <https://www.thingiverse.com/thing:794786>
+Laser Gimbal with 2 Stepper Motors based on Thingiverse project: <https://www.thingiverse.com/thing:4561012>
 
 Test cycles each stepper then draws a circle with the laser pointer.  Switches allow users to move the center of the circle (up/down/left/right).
 
