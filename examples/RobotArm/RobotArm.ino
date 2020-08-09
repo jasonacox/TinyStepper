@@ -13,13 +13,16 @@
   6 x 61k Ohm Resistors (pull up resistor for switches)
   5V Power Supply (do not power steppers with Arduino)
 
-  Video Demo: https://www.youtube.com/watch?v=fzrtDgM6CLM&feature=youtu.be
-  
+  Video Demo: https://www.youtube.com/watch?v=fzrtDgM6CLM&feature=youtu.b
 */
 
 #include <TinyStepper.h>
 
 #define HALFSTEPS 4096  // Number of half-steps for a full rotation
+
+#define MOTIONTEST false    // Cycle arm on startup (set to false for button control only)
+#define DELTA 0.125         // Stepper degrees to change per button press loop
+#define STEPWAIT 1          // Time to wait for motor to move between steps (-Speed vs Torque+)
 
 // Motion control microswitches
 #define UP1 26
@@ -29,9 +32,7 @@
 #define UP3 30
 #define DOWN3 31
 
-// Initialize the TinyStepper Class
 // Arduino Pin Outputs to to the ULN2003 for the 28BYJ-48 Stepper Motors
-
 //                             IN1   IN2   IN3   IN4
 TinyStepper stepper1(HALFSTEPS,  8,   9,   10,   11);
 TinyStepper stepper2(HALFSTEPS,  4,   5,    6,    7);
@@ -52,49 +53,48 @@ void setup()
   pinMode(UP3, INPUT);
   pinMode(DOWN3, INPUT);
 
-  Serial.println("Stepper 1 Motion Test");
-  stepper1.AccelMove(180);
-  stepper1.AccelMove(-180);
+  if (MOTIONTEST) {
+    Serial.println("Stepper 1 Motion Test");
+    stepper1.AccelMove(180);
+    stepper1.AccelMove(-180);
 
-  Serial.println("Stepper 2 Motion Test");
-  stepper2.AccelMove(180);
-  stepper2.AccelMove(-180);
+    Serial.println("Stepper 2 Motion Test");
+    stepper2.AccelMove(180);
+    stepper2.AccelMove(-180);
 
-  Serial.println("Stepper 3 Motion Test");
-  stepper3.AccelMove(180);
-  stepper3.AccelMove(-180);
+    Serial.println("Stepper 3 Motion Test");
+    stepper3.AccelMove(180);
+    stepper3.AccelMove(-180);
+  }
 }
 
 
 void loop() {
-
+  
   if (digitalRead(UP1) == LOW) {
-    stepper1.Move(1);
+    stepper1.Move(DELTA, STEPWAIT);
     Serial.println("UP1");
   }
   if (digitalRead(DOWN1) == LOW) {
-    stepper1.Move(-1);
+    stepper1.Move(-DELTA, STEPWAIT);
     Serial.println("DOWN1");
   }
 
-
   if (digitalRead(UP2) == LOW) {
-    stepper2.Move(1);
+    stepper2.Move(DELTA, STEPWAIT);
     Serial.println("UP2");
   }
   if (digitalRead(DOWN2) == LOW) {
-    stepper2.Move(-1);
+    stepper2.Move(-DELTA, STEPWAIT);
     Serial.println("DOWN2");
   }
 
-
   if (digitalRead(UP3) == LOW) {
-    stepper3.Move(1);
+    stepper3.Move(DELTA, STEPWAIT);
     Serial.println("UP3");
   }
   if (digitalRead(DOWN3) == LOW) {
-    stepper3.Move(-1);
+    stepper3.Move(-DELTA, STEPWAIT);
     Serial.println("DOWN3");
   }
-
 }
