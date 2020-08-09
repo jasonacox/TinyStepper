@@ -22,17 +22,17 @@
 // Number of half-steps for a full rotation
 #define HALFSTEPS 4096
 
+#define FACTOR 5      // Size of circle
+#define STEPWAIT 2    // Time to wait for motor to move between steps (-Speed vs Smooth+)
+#define RESOLUTION 10 // Increase to smooth circle by staggering stepper updates
+
 // Motion control microswitches
 #define UP1 2
 #define DOWN1 3
 #define UP2 12
 #define DOWN2 13
 
-#define FACTOR 3  // Size of circle
-
-// Initialize the TinyStepper Class
 // Arduino Pin Outputs to to the ULN2003 for the 28BYJ-48 Stepper Motors
-
 //                             IN1   IN2   IN3   IN4
 TinyStepper stepper1(HALFSTEPS,  8,   9,   10,   11);
 TinyStepper stepper2(HALFSTEPS,  4,   5,    6,    7);
@@ -41,6 +41,7 @@ TinyStepper stepper2(HALFSTEPS,  4,   5,    6,    7);
 float dx;
 float dy;
 float t;
+int buttondown = 0;
 
 void setup()
 {
@@ -73,38 +74,49 @@ void setup()
 
 void loop() {
 
-  dx = (FACTOR * sin(t));
-  dy = (FACTOR * cos(t));
-  delay(10);
+  if (buttondown == 0) {    // if button pressed stop circle
+    dx = (FACTOR * sin(t));
+    dy = (FACTOR * cos(t));
+    delay(10);
 
-  t = t + 0.1;
-  Serial.print(">> x=");
-  Serial.print(dx);
-  Serial.print(" y=");
-  Serial.print(dy);
-  Serial.print(" t=");
-  Serial.println(t);
+    t = t + 0.1;
+    Serial.print(">> x=");
+    Serial.print(dx);
+    Serial.print(" y=");
+    Serial.print(dy);
+    Serial.print(" t=");
+    Serial.println(t);
 
-  // Draw circle with laser pointer
-  stepper1.Move(dx);
-  stepper2.Move(dy);
-
+    // Draw circle with laser pointer
+    for (int x = 0; x < RESOLUTION; x++) {
+      stepper1.Move(dx / RESOLUTION, STEPWAIT);
+      stepper2.Move(dy / RESOLUTION, STEPWAIT);
+    }
+  }
+  else {
+    buttondown--;   // Countdown to start circle drawing
+    delay(1);
+  }
+  
   // Allow user to adjust pointer location
-
   if (digitalRead(UP1) == LOW) {
-    stepper1.Move(1);
+    buttondown = 100;
+    stepper1.Move(0.1);
     Serial.println("UP1");
   }
   if (digitalRead(DOWN1) == LOW) {
-    stepper1.Move(-1);
+    buttondown = 100;
+    stepper1.Move(-0.1);
     Serial.println("DOWN1");
   }
   if (digitalRead(UP2) == LOW) {
-    stepper2.Move(1);
+    buttondown = 100;
+    stepper2.Move(0.1);
     Serial.println("UP2");
   }
   if (digitalRead(DOWN2) == LOW) {
-    stepper2.Move(-1);
+    buttondown = 100;
+    stepper2.Move(-0.1);
     Serial.println("DOWN2");
   }
 
