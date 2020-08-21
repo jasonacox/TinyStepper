@@ -1,0 +1,15 @@
+{
+  "name": "TinyStepper",
+  "keywords": "Stepper, Motor, Tiny, 28BYJ-48, halfstep, UNL2003",
+  "description": "Arduino library to drive stepper motors. Small and easy to use.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jasonacox/TinyStepper.git"
+  },
+  "authors": {
+    "name": "Jason Cox",
+    "url": "https://jasonacox.com"
+  },
+  "frameworks": "arduino",
+  "platforms": "*"
+}
