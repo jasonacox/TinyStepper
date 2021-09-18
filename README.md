@@ -1,7 +1,7 @@
 # Tiny Stepper #
 
 [![arduino-library-badge](https://www.ardu-badge.com/badge/TinyStepper.svg?)](https://www.ardu-badge.com/TinyStepper)
-[![Build Status](https://travis-ci.org/jasonacox/TinyStepper.svg?branch=master)](https://travis-ci.org/jasonacox/TinyStepper)
+[![Build Status](https://app.travis-ci.com/jasonacox/TinyStepper.svg?branch=master)](https://app.travis-ci.com/jasonacox/TinyStepper)
 
 Arduino library to drive stepper motors. Small and easy to use.
 
