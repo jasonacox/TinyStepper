@@ -1,6 +1,7 @@
 # TinyStepper Examples #
 
-[![Build Status](https://travis-ci.com/jasonacox/TinyStepper.svg?branch=master)](https://travis-ci.com/jasonacox/TinyStepper)
+[![arduino-library-badge](https://www.ardu-badge.com/badge/TinyStepper.svg?)](https://www.ardu-badge.com/TinyStepper)
+[![Build Status](https://app.travis-ci.com/jasonacox/TinyStepper.svg?branch=master)](https://app.travis-ci.com/jasonacox/TinyStepper)
 
 Arduino sketch examples:
 
