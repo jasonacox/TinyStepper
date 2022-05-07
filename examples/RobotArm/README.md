@@ -1,8 +1,10 @@
 # Robotic Arm
 
+Robotic Arm with 3 Stepper Motors based on Thingiverse project: <https://www.thingiverse.com/thing:2838859>
+
 ![RoboticArm](https://github.com/jasonacox/TinyStepper/blob/master/examples/RoboticArm.png)
 
-Robotic Arm with 3 Stepper Motors based on Thingiverse project: <https://www.thingiverse.com/thing:2838859>
+[![Video](https://img.youtube.com/vi/fzrtDgM6CLM/0.jpg)](https://www.youtube.com/watch?v=fzrtDgM6CLM "Play Video")
 
 [Arduino Code](RobotArm.ino) for control board. Test cycles each stepper and then responds to user switches (up/down) for stepper motion.
 
