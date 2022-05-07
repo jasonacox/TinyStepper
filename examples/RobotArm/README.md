@@ -1,6 +1,6 @@
 # Robotic Arm
 
-![RoboticArm](RoboticArm.png)
+![RoboticArm](https://github.com/jasonacox/TinyStepper/blob/master/examples/RoboticArm.png)
 
 Robotic Arm with 3 Stepper Motors based on Thingiverse project: <https://www.thingiverse.com/thing:2838859>
 
