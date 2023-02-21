@@ -8,6 +8,7 @@ TinyStepper	KEYWORD1
 # Methods and Functions (KEYWORD2)
 #######################################
 
+Begin	KEYWORD2
 Move	KEYWORD2
 AccelMove	KEYWORD2
 Disable	KEYWORD2

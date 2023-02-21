@@ -21,6 +21,12 @@ public:
   //! @param IN4 - The number of the digital pin connected to the IN4 of the ULN2003
   TinyStepper(uint16_t halfsteps, uint8_t IN1, uint8_t IN2, uint8_t IN3, uint8_t IN4);
 
+  //! Initialize the stepper hardware, setting data pins.
+  //!
+  //! This method should be called once (typically in setup()) before calling any other.
+  //! @note This is an alias to Enable()
+  void Begin();
+
   //! Move the stepper motor forward or backward specified in degrees (float).
   //!
   //! @param angle - Positive or negative number of degrees to move
@@ -43,8 +49,9 @@ public:
   //! Removing power will allow the stepper motor to move on its own.  It will not be locked.
   void Disable();
 
-  //! Enable stepper motor - lock stepper motor to current phase
+  //! Initialize, set pins and engage stepper motor - Will lock stepper motor to current phase
   //!
+  //! This method should be called at least once (typically in setup()) before calling any other.
   //! Stepper motor will be locked until sent a Move command.
   void Enable();
 

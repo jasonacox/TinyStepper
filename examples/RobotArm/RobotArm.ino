@@ -41,6 +41,7 @@ TinyStepper stepper3(HALFSTEPS, 22,  23,   24,   25);
 void setup()
 {
   Serial.begin(38400);
+
   stepper1.Enable();
   stepper2.Enable();
   stepper3.Enable();

@@ -7,7 +7,7 @@
 // Includes
 #include "Arduino.h"
 #include "math.h"
-#include <TinyStepper.h>
+#include "TinyStepper.h"
 
 // The Stepper Motor is driven by a ULN2003A which provides an array of seven NPN Darlington transistors 
 // capable of 500 mA, 50 V output, great for driving inductive loads like a motor.
@@ -42,12 +42,12 @@ TinyStepper::TinyStepper(uint16_t halfsteps, uint8_t IN1, uint8_t IN2, uint8_t I
   steps = halfsteps;
   step_angle = (float)(360.0/steps);
   phase = 0;
+}
 
-  // Set the pins as output
-  pinMode(m_pinIN1, OUTPUT);//set the IN1 pin as OUTPUT
-  pinMode(m_pinIN2, OUTPUT);//set the IN2 pin as OUTPUT
-  pinMode(m_pinIN3, OUTPUT);//set the IN3 pin as OUTPUT
-  pinMode(m_pinIN4, OUTPUT);//set the IN4 pin as OUTPUT
+// Initialize the stepper hardware, setting data pins.
+void TinyStepper::Begin()
+{
+  Enable();
 }
 
 // Move stepper 'angle' degrees  
@@ -105,6 +105,12 @@ void TinyStepper::Disable() {
 
 // Set motor to current phase - locked
 void TinyStepper::Enable() {
+  // Set the pins as output
+  pinMode(m_pinIN1, OUTPUT);//set the IN1 pin as OUTPUT
+  pinMode(m_pinIN2, OUTPUT);//set the IN2 pin as OUTPUT
+  pinMode(m_pinIN3, OUTPUT);//set the IN3 pin as OUTPUT
+  pinMode(m_pinIN4, OUTPUT);//set the IN4 pin as OUTPUT
+  // Lock Stepper
   SetPhase(phase);
 }
 

@@ -46,6 +46,7 @@ int buttondown = 0;
 void setup()
 {
   Serial.begin(38400);
+
   stepper1.Enable();
   stepper2.Enable();
   delay(1000);
