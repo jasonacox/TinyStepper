@@ -1,11 +1,11 @@
 # Release Notes for TinyStepper
 
-## v1.2.0
+## v1.2.0 - Enable Fix
 
 - Moved pin initialization to `Enable()` function and added `Begin()` as alias.
 - Either `Enable()` or `Begin()` should be called at least once in `setup()` to initialize pins and stepper motors.
 
-## v1.1.0
+## v1.1.0 - Example Sketches
 
 Updated and added example Arduino sketches:
 
